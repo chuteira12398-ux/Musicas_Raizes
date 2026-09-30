@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Poppy Playtime</title>
+
+<style>
+body{
+    margin:0;
+    background:#111;
+    color:white;
+    font-family:Arial,sans-serif;
+    text-align:center;
+}
+
+header{
+    background:#000;
+    padding:20px;
+}
+
+.container{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:20px;
+    padding:30px;
+}
+
+.card{
+    width:240px;
+    background:#222;
+    border-radius:12px;
+    overflow:hidden;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.card:hover{
+    transform:scale(1.05);
+}
+
+.card img{
+    width:100%;
+    height:300px;
+    object-fit:cover;
+}
+
+#info{
+    width:80%;
+    max-width:900px;
+    margin:20px auto;
+    background:#222;
+    border-radius:12px;
+    padding:20px;
+    text-align:left;
+}
+
+ul{
+    line-height:1.8;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>Poppy Playtime</h1>
+</header>
+
+<div class="container">
+
+    <div class="card" onclick="mostrar('cap1')">
+        <img src="https://cdn-bgp.bluestacks.com/BGP/prt/gametiles_com.MOBGames.PoppyMobileChap1.jpg" alt="Chapter 1">
+        <h2>Chapter 1</h2>
+    </div>
+
+    <div class="card" onclick="mostrar('cap2')">
+        <img src="https://image.api.playstation.com/vulcan/ap/rnd/202408/2820/7981c9f8f122ac08d5febb8b883578b895300f8248f8cb1a.png" alt="Chapter 2">
+        <h2>Chapter 2</h2>
+    </div>
+
+    <div class="card" onclick="mostrar('cap3')">
+        <img src="https://image.api.playstation.com/vulcan/ap/rnd/202408/2820/3ac645931328e4ca5a7775db1164c09fef421589e6a50b88.png" alt="Chapter 3">
+        <h2>Chapter 3</h2>
+    </div>
+
+    <div class="card" onclick="mostrar('cap4')">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRlbL6by4R7VZHzoVBhzlnqIV7DdevNSSLf81LQ_qSHmUFes9XsDlJbijE&s=10" alt="Chapter 4">
+        <h2>Chapter 4</h2>
+    </div>
+
+     <div class="card" onclick="mostrar('cap5')">
+        <img src="https://cdn1.epicgames.com/spt-assets/465c0f6c95d04b1c86b280b4925fee2d/poppy-playtime-9p9d8.jpg" alt="Chapter 5">
+        <h2>Chapter 5</h2>
+    </div>
+
+</div>
+
+<div id="info">
+    <h2>Olá! Seja bem-vindo!</h2>
+    <p>Clique em um capítulo para ver as informações.</p>
+</div>
+
+<script>
+
+const capitulos = {
+
+cap1:{
+titulo:"Chapter 1 - A Tight Squeeze",
+
+historia:[
+"Você é um ex-funcionário da Playtime Co.",
+"Após receber uma carta misteriosa, retorna à fábrica abandonada.",
+"Logo descobre que os brinquedos estão vivos."
+],
+
+personagens:[
+"Huggy Wuggy",
+"Poppy",
+"Boogie Bot"
+],
+
+jogabilidade:[
+"Resolver quebra-cabeças.",
+"Usar o GrabPack.",
+"Explorar a fábrica.",
+"Escapar de Huggy Wuggy."
+]
+},
+
+cap2:{
+titulo:"Chapter 2 - Fly in a Web",
+
+historia:[
+"Poppy é libertada da caixa.",
+"Ela guia o jogador pela fábrica.",
+"Mommy Long Legs cria vários desafios."
+],
+
+personagens:[
+"Mommy Long Legs",
+"Poppy",
+"Bunzo Bunny",
+"Mini Huggies"
+],
+
+jogabilidade:[
+"Novos quebra-cabeças.",
+"Jogos de sobrevivência.",
+"Uso avançado do GrabPack.",
+"Fugir de Mommy Long Legs."
+]
+},
+
+cap3:{
+titulo:"Chapter 3 - Deep Sleep",
+
+historia:[
+"O jogador entra no Playcare.",
+"Uma fumaça chamada Red Smoke ameaça todos.",
+"CatNap persegue o jogador."
+],
+
+personagens:[
+"CatNap",
+"Poppy",
+"Kissy Missy",
+"DogDay"
+],
+
+jogabilidade:[
+"Exploração do Playcare.",
+"Resolver enigmas.",
+"Evitar CatNap.",
+"Usar novas ferramentas."
+]
+},
+
+cap4:{
+titulo:"Chapter 4",
+
+historia:[
+"O jogador continua investigando os segredos da fábrica.",
+"Mais experimentos da Playtime Co. são revelados.",
+"Novas ameaças aparecem."
+],
+
+personagens:[
+"Doctor",
+"Poppy",
+"Kissy Missy",
+"Novos Experimentos"
+],
+
+jogabilidade:[
+"Exploração de áreas inéditas.",
+"Quebra-cabeças mais difíceis.",
+"Ameaças mais perigosas.",
+"Descoberta dos segredos da fábrica."
+]
+},
+
+cap5:{
+titulo:"Chapter 5 - The Final Chapter",
+
+historia:[
+"O jogador enfrenta os desafios finais.",
+"Descobre os verdadeiros segredos da fábrica.",
+"Tem que tomar decisões difíceis.",
+"Você precisa derrotar o Protótipo 1006 e escapar da fábrica antes que seja tarde demais."
+],
+
+personagens:[
+"Poppy",
+"Doctor",
+"Kissy Missy",
+"Protótipo 1006",
+"Giblet",
+"Lilly Love Braids"
+
+],
+
+jogabilidade:[
+"Exploração de áreas inéditas.",
+"Quebra-cabeças mais difíceis.",
+"Ameaças mais perigosas.",
+"Descoberta dos segredos da fábrica."
+]
+}
+
+}
+
+function mostrar(id){
+
+const cap = capitulos[id];
+
+document.getElementById("info").innerHTML = `
+
+<h2>${cap.titulo}</h2>
+
+<h3>📖 História</h3>
+<ul>
+${cap.historia.map(item => `<li>${item}</li>`).join("")}
+</ul>
+
+<h3>🎭 Personagens</h3>
+<ul>
+${cap.personagens.map(item => `<li>${item}</li>`).join("")}
+</ul>
+
+<h3>🎮 Jogabilidade</h3>
+<ul>
+${cap.jogabilidade.map(item => `<li>${item}</li>`).join("")}
+</ul>
+
+`;
+
+}
+
+</script>
+
+</body>
+</html>

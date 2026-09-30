@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FNAF 1 ao 4</title>
+
+<style>
+
+body{
+    background:#111;
+    color:white;
+    font-family:Arial,sans-serif;
+    text-align:center;
+    margin:0;
+}
+
+.img-container{
+    width:100%;
+    height:220px;
+    overflow:hidden;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:#000;
+}
+
+.img-container img{
+    width:100%;
+    max-width:1400px;
+    height:100%;
+    object-fit:cover;
+}
+
+.container{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:20px;
+}
+
+.card{
+    width:260px;
+    background:#222;
+    border-radius:10px;
+    overflow:hidden;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.card:hover{
+    transform:scale(1.05);
+}
+
+.card img{
+    width:100%;
+    height:210px;
+    object-fit:cover;
+}
+
+.info{
+    max-width:1000px;
+    margin:30px auto;
+    background:#222;
+    padding:20px;
+    border-radius:10px;
+    text-align:left;
+}
+
+.personagens{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:20px;
+}
+
+.personagem{
+    text-decoration:none;
+    color:white;
+    text-align:center;
+}
+
+.personagem img{
+    width:180px;
+    height:220px;
+    object-fit:cover;
+    border-radius:10px;
+    transition:.3s;
+}
+
+.personagem img:hover{
+    transform:scale(1.05);
+}
+
+</style>
+</head>
+<body>
+
+<h1 class="img-container">
+    <img src="https://www.pngall.com/wp-content/uploads/15/Five-Nights-At-Freddys-Logo-Transparent.png" alt="Five Nights at Freddy's Logo" style="width: 100%; max-width: 600px; height: auto;">
+</h1>
+
+<div class="container">
+
+    <div class="card" onclick="mostrar('fnaf1')">
+        <img src="https://static.wikia.nocookie.net/freddy-fazbears-pizza/images/d/da/FNaF1.jpg/revision/latest/scale-to-width-down/1200?cb=20230410020858">
+        <h2>FNAF 1</h2>
+    </div>
+
+    <div class="card" onclick="mostrar('fnaf2')">
+        <img src="https://static.wikia.nocookie.net/pizzaria-freddy-fazbear/images/7/73/FNAF_2_picture.png/revision/latest?cb=20150122171402&path-prefix=pt-br">
+        <h2>FNAF 2</h2>
+    </div>
+
+    <div class="card" onclick="mostrar('fnaf3')">
+        <img src="https://static.wikia.nocookie.net/pizzaria-freddy-fazbear/images/7/70/FNaF3_Steam_Greenlight_Icon.png/revision/latest?cb=20150622220052&path-prefix=pt-br">
+        <h2>FNAF 3</h2>
+    </div>
+
+    <div class="card" onclick="mostrar('fnaf4')">
+        <img src="https://static.wikia.nocookie.net/pizzaria-freddy-fazbear/images/c/c2/Fnaf4icon.jpg/revision/latest?cb=20150723022807&path-prefix=pt-br">
+        <h2>FNAF 4</h2>
+    </div>
+
+</div>
+
+<div id="info" class="info">
+    Clique em um jogo para ver as informações.
+</div>
+
+<script>
+
+const jogos = {
+
+fnaf1:{
+titulo:"FNAF 1",
+
+historia:"Você trabalha como vigia noturno da Freddy Fazbear's Pizza e deve sobreviver aos animatrônicos até as 6 da manhã.",
+
+jogabilidade:"Usar câmeras, portas e luzes enquanto controla o consumo de energia.",
+
+personagens:[
+{
+nome:"Freddy Fazbear",
+imagem:"https://static.wikia.nocookie.net/pizzaria-freddy-fazbear/images/4/4e/FreddyFZB.png/revision/latest/thumbnail/width/360/height/360?cb=20150110135042&path-prefix=pt-br",
+link:"https://pt.wikipedia.org/wiki/Five_Nights_at_Freddy%27s"
+},
+{
+nome:"Bonnie",
+imagem:"https://static.wikia.nocookie.net/pizzaria-freddy-fazbear/images/a/a0/Bonnie.png/revision/latest/thumbnail/width/360/height/360?cb=20150110002200&path-prefix=pt-br",
+link:"https://es.wikipedia.org/wiki/Bonnie_(personaje)"
+},
+{
+nome:"Chica",
+imagem:"https://static.wikia.nocookie.net/pizzaria-freddy-fazbear/images/c/c3/200px-Chica.png/revision/latest/thumbnail/width/360/height/360?cb=20150110134015&path-prefix=pt-br",
+link:"https://es.wikipedia.org/wiki/Chica_(personaje)"
+},
+{
+nome:"Foxy",
+imagem:"https://static.wikia.nocookie.net/pizzaria-freddy-fazbear/images/1/1d/FoxyPirata.png/revision/latest/thumbnail/width/360/height/360?cb=20150110180603&path-prefix=pt-br",
+link:"https://es.wikipedia.org/wiki/Foxy_(personaje)"
+},
+
+{
+    nome:"Golden Freddy",
+    imagem:"https://static.wikia.nocookie.net/freddy-fazbears-pizza/images/6/61/548.png/revision/latest/scale-to-width-down/250?cb=20141105054313",
+    link:"https://pt.wikipedia.org/wiki/Five_Nights_at_Freddy%27s?utm_source=chatgpt.com"
+}
+]
+},
+
+fnaf2:{
+titulo:"FNAF 2",
+
+historia:"Prequela do primeiro jogo. Novos animatrônicos são introduzidos e eventos misteriosos continuam acontecendo.",
+
+jogabilidade:"Usar máscara de Freddy, monitorar câmeras e controlar a caixa de música.",
+
+personagens:[
+{
+nome:"Toy Freddy",
+imagem:"https://static.wikia.nocookie.net/fnafultimatecustomnight/images/3/3f/Toyfreddy.png/revision/latest?cb=20180415145706",
+link:"https://www.google.com/search?q=wiki+do+toy+freddy+fnaf+2&sca_esv=24e9182f14ad4a8e&sxsrf=APpeQnuRas5hphb-0WZxT50NjrKH5wKm5Q%3A1782249529420&ei=Ofg6ap2TGezV1sQPsKv6yAw&ved=0ahUKEwjdk-jwpJ6VAxXsqpUCHbCVHskQ4dUDCBI&uact=5&oq=wiki+do+toy+freddy+fnaf+2&gs_lp=Egxnd3Mtd2l6LXNlcnAiGXdpa2kgZG8gdG95IGZyZWRkeSBmbmFmIDIyBhAAGBYYHjIFEAAY7wUyBRAAGO8FMggQABiABBiiBEihK1DQBljjJ3ADeACQAQCYAaIBoAHuCqoBBDAuMTC4AQPIAQD4AQGYAgygAsUKwgIKEAAYRxjWBBiwA8ICBRAhGKABwgIFECEYnwXCAgcQIRgKGKABmAMAiAYBkAYIkgcDMy45oAe4N7IHAzAuObgHrArCBwcwLjEuOS4yyAc8gAgB&sclient=gws-wiz-serp"
+},
+
+{
+nome:"Toy Bonnie",
+imagem:"https://static.wikia.nocookie.net/pizzaria-freddy-fazbear/images/9/9d/Toy_Bonnie_%28UCN%29.png/revision/latest?cb=20180628191342&path-prefix=pt-br",
+link:"https://www.google.com/search?q=wiki+do+toy+bonnie+fnaf+2&sca_esv=24e9182f14ad4a8e&sxsrf=APpeQntZ89-3ixNdtx3CbMF8CL0iWQ0nsg%3A1782249598879&ei=fvg6arOgNfKr1sQPmuvtqAY&biw=773&bih=606&ved=0ahUKEwiz1_eRpZ6VAxXylZUCHZp1G2UQ4dUDCBI&uact=5&oq=wiki+do+toy+bonnie+fnaf+2&gs_lp=Egxnd3Mtd2l6LXNlcnAiGXdpa2kgZG8gdG95IGJvbm5pZSBmbmFmIDIyBRAAGO8FMgUQABjvBTIFEAAY7wUyBRAAGO8FSIIlULsQWPIicAJ4AZABAJgB7QGgAd0OqgEGMC4xMC4yuAEDyAEA-AEBmAIJoAL6B8ICChAAGEcY1gQYsAPCAgcQIxiwAhgnwgIIEAAYgAQYogTCAgQQIRgKmAMAiAYBkAYIkgcDMi43oAegIrIHAzAuN7gH5gfCBwcwLjEuNy4xyAcpgAgB&sclient=gws-wiz-serp"
+},
+
+{
+nome:"Toy Chica",
+imagem:"https://images.cults3d.com/JBgHCvicKPajkEL4GmXUe0ZdNmQ=/516x516/filters:no_upscale()/https://fbi.cults3d.com/uploaders/20390217/illustration-file/be8940be-9a59-414d-8772-cae7dc918ce1/toy-chica-mask.png",
+link:"https://www.google.com/search?q=wiki+do+toy+chica+fnaf+2&sca_esv=24e9182f14ad4a8e&sxsrf=APpeQnqJzV5X5X5X5X5X5X5X5X5X5X5X5X5X5X5X5X5X5X5X5X5X5X5X5X5X5X5X5X5X5X5X5X5X5X5X5X5X5X5X5X5X5X5X5X5X5X5X5X5X5X5X5X5X five_nights_at_freddy%27s?utm_source=chatgpt.com"
+},
+
+{
+nome:"Withered Freddy",
+imagem:"https://static.wikia.nocookie.net/ultra-custom-night/images/e/ee/Withered_freddy.png/revision/latest/scale-to-width/360?cb=20220819203216",
+link:"https://www.google.com/search?sca_esv=24e9182f14ad4a8e&sxsrf=APpeQnsvY72FUv58Ui4XlKLSQA8qb2_XSw:1782249711583&q=wiki+do+withered+freddy+fnaf+2&source=lnms&fbs=ABfTbFVGaQeaqnsRPI5sOMG32KszkLt6nAp8aiRKj5vMjqZApM7d94IgJZsWyTKWnCa3K4vEhcLiwy5FbK_5yZlov9KqYA9FWSlOt6KV1XmJdGUMYtllPD4PsJJVUrSRcCjchIIwfFOJAs5Liy8yc-0dprisiYRbFDUYyzKxKK-CFzuHOORBLALfUSM5SIVScy08s45C20NtsgMvC5bzr1X7al1q6WBKaP4dGz0uHYLza1g4CTq9gzk&sa=X&ved=2ahUKEwjIzdbHpZ6VAxVJqZUCHUT_B-IQ0pQJegQICxAB&biw=773&bih=606&dpr=1"
+},
+
+{
+nome:"Withered Bonnie",
+imagem:"https://static.wikia.nocookie.net/pizzaria-freddy-fazbear/images/1/12/Withered_Bonnie_%28UCN%29.png/revision/latest?cb=20180628190917&path-prefix=pt-br",
+link:"https://www.google.com/search?q=wiki+do+withered+bonnie+fnaf+2&sca_esv=24e9182f14ad4a8e&sxsrf=APpeQnqJzV5X5X5X5X5X5X5X5X5X5X5X5X5X5X5X5X5X5X5X5X5X5X5X5X5X5X5X5X5X5X5X5X5X5X5X5X5X5X5X5X5X5X5X five_nights_at_freddy%27s?utm_source=chatgpt.com"
+},
+
+{
+nome:"Withered Chica",
+imagem:"https://preview.redd.it/why-does-withered-chica-have-blood-on-her-endo-02-skeleton-v0-gea0ig9ulijc1.png?width=640&crop=smart&auto=webp&s=b585fbe8cf80249457c352310bc3402332d65538",
+link:"https://www.google.com/search?q=wiki+do+withered+chica+fnaf+2&sca_esv=24e9182f14ad4a8e&sxsrf=APpeQnqJzV5X5X5X5X5X5X5X5X5X5X5X5X5X5X5X5X5X5X5X5X5X5X5X5X5X5X5X5X5X5X5X5X5X5X5X5X5X5X5X5X5X5X5X five_nights_at_freddy%27s?utm_source=chatgpt.com"
+},
+
+{
+nome:"Withered Foxy",
+imagem:"https://static.wikia.nocookie.net/ultra-custom-night/images/7/7d/WitheredFoxyShrkiIcon.png/revision/latest/scale-to-width/360?cb=20220823135150",
+link:"https://www.google.com/search?q=wiki+do+withered+foxy+fnaf+2&sca_esv=24e9182f14ad4a8e&sxsrf=APpeQnqJzV5X5X5X5X5X5X5X5X5X5X5X5X5X5X5X5X5X5X5X5X5X5X5X5X5X5X5X5X5X five_nights_at_freddy%27s?utm_source=chatgpt.com"
+},
+
+{
+nome:"Withered Golden Freddy",
+imagem:"https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/c9d2f588-8133-41d0-bdcb-50972bca9052/dce15om-f3b5216d-6d3e-45af-b450-210f58e4d6bd.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiIvZi9jOWQyZjU4OC04MTMzLTQxZDAtYmRjYi01MDk3MmJjYTkwNTIvZGNlMTVvbS1mM2I1MjE2ZC02ZDNlLTQ1YWYtYjQ1MC0yMTBmNThlNGQ2YmQucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.iX8ibCWFSWHnsQtNPZP4cHdM_baDCLc14Xf49HUK14o",
+link:"https://www.google.com/search?q=wiki+do+withered+golden+freddy+fnaf+2&sca_esv=24e9182f14ad4a8e&sxsrf=APpeQnqJzV5X5X5X5X5X5X5X5X5X5X5X5X5X5X5X5X5X5X5X5X5X5X5X5X5X5X5X5X5X five_nights_at_freddy%27s?utm_source=chatgpt.com"
+},
+
+{
+nome:"Puppet",
+imagem:"https://static.wikia.nocookie.net/fnafapedia/images/2/2b/ThePuppetsFace.png/revision/latest/scale-to-width-down/250?cb=20170224080651",
+link:"https://www.google.com/search?q=wiki+do+withered+puppet+fnaf+2&sca_esv=24e9182f14ad4a8e&sxsrf=APpeQnqJzV5X5X5X5X5X5X5X5X5X5X5X5X five_nights_at_freddy%27s?utm_source=chatgpt.com"
+},
+
+{
+nome:"Mangle",
+imagem:"https://static.wikia.nocookie.net/pizzaria-freddy-fazbear/images/e/e0/Mangle_%28UCN%29.png/revision/latest?cb=20180628191341&path-prefix=pt-br",
+link:"https://www.google.com/search?q=wiki+do+withered+mangle+fnaf+2&sca_esv=24e9182f14ad4a8e&sxsrf=APpeQnqJzV5X5X5X5X5X5X5X5X5X5X5X5X five_nights_at_freddy%27s?utm_source=chatgpt.com"
+},
+
+{
+    nome:"Balloon Boy",
+    imagem:"https://static.wikia.nocookie.net/freddy-fazbears-pizzeria-simulator/images/2/2f/Balloon_BoyCN.png/revision/latest?cb=20210130152239",
+    link:"https://www.google.com/search?q=wiki+do+balloon+boy+fnaf+2&sca_esv=24e9182f14ad4a8e&sxsrf=APpeQnqJzV5X5X5X5X5X5X5X5X5X5X5X5X five_nights_at_freddy%27s?utm_source=chatgpt.com"
+},
+
+{
+    nome:"JJ",
+    imagem:"https://static.wikia.nocookie.net/freddy-fazbears-pizza/images/2/2a/JJ_under_UCN_Office.png/revision/latest?cb=20180708144002",
+    link:"https://www.google.com/search?q=wiki+do+jj+fnaf+2&sca_esv=24e9182f14ad4a8e&sxsrf=APpeQnqJzV5X5X5X5X5X5X5X5X5X5X5X5X five_nights_at_freddy%27s?utm_source=chatgpt.com"
+},
+
+{
+    nome:"Shadow Freddy",
+    imagem:"https://static.wikia.nocookie.net/ultra-custom-night/images/a/a5/ShadowFreddyShrkiIcon.png/revision/latest?cb=20240109004655",
+    link:"https://www.google.com/search?q=wiki+do+shadow+freddy+fnaf+2&sca_esv=24e9182f14ad4a8e&sxsrf=APpeQnqJzV5X5X5X5X5X5X5X5X5X5X5X5X five_nights_at_freddy%27s?utm_source=chatgpt.com"
+},
+
+{
+    nome:"Shadow Bonnie",
+    imagem:"https://static.wikia.nocookie.net/ultra-custom-night/images/2/29/RWQFSFASXC.png/revision/latest/scale-to-width/360?cb=20230423171314",
+    link:"https://www.google.com/search?q=wiki+do+shadow+bonnie+fnaf+2&sca_esv=24e9182f14ad4a8e&sxsrf=APpeQnqJzV5X5X5X5X5X5X5X5X5X5X5X5X five_nights_at_freddy%27s?utm_source=chatgpt.com"
+},
+
+]
+},
+
+fnaf3:{
+titulo:"FNAF 3",
+
+historia:"30 anos depois dos acontecimentos anteriores, uma atração de terror é criada e Springtrap aparece.",
+
+jogabilidade:"Monitorar sistemas, câmeras e ventilação para sobreviver.",
+
+personagens:[
+{
+nome:"Springtrap",
+imagem:"https://static.wikia.nocookie.net/freddy-fazbears-pizza/images/3/35/Springtrap-Icon.png/revision/latest?cb=20220203201657",
+link:"https://es.wikipedia.org/wiki/William_Afton"
+},
+
+{
+nome:"Phantom Foxy",
+imagem:"https://static.wikia.nocookie.net/freddy-fazbears-pizza/images/6/6a/PhantomFoxy-Icon.png/revision/latest?cb=20220127220536",
+link:"https://www.google.com/search?q=wiki+do+phantom+foxy+fnaf+2&sca_esv=24e9182f14ad4a8e&biw=773&bih=606&sxsrf=APpeQnuAJ3eB3aVFKqWIscHHTJgB30mX-g%3A1782249713905&ei=8fg6au_pNtzM1sQPr5eq4Qk&ved=0ahUKEwivpuTIpZ6VAxVcppUCHa-LKpwQ4dUDCBI&uact=5&oq=wiki+do+phantom+foxy+fnaf+2&gs_lp=Egxnd3Mtd2l6LXNlcnAiG3dpa2kgZG8gcGhhbnRvbSBmb3h5IGZuYWYgMjIFEAAY7wUyCBAAGIAEGKIEMgUQABjvBTIFEAAY7wUyBRAAGO8FSMcgULMFWPcecAF4AZABAJgBpgGgAeINqgEEMC4xM7gBA8gBAPgBAZgCDaACow3CAgoQABhHGNYEGLADmAMAiAYBkAYIkgcEMS4xMqAHlB-yBwQwLjEyuAeYDcIHBjItMTIuMcgHQIAIAQ&sclient=gws-wiz-serp"
+},
+
+
+{
+nome:"Phantom Ballon Boy",
+imagem:"https://static.wikia.nocookie.net/freddy-fazbears-pizza/images/f/f7/PhantomBalloonBoy-Icon.png/revision/latest?cb=20220127220401",
+link:"https://www.google.com/search?q=wiki+do+phantom+balloon+boy+fnaf+2&sca_esv=24e9182f14ad4a8e&sxsrf=APpeQnqJzV5X5X5X5X5X5X5X5X5X5X5X5X five_nights_at_freddy%27s?utm_source=chatgpt.com"
+},
+
+{
+nome:"Phantom Puppet",
+imagem:"https://static.wikia.nocookie.net/freddy-fazbears-pizza/images/6/6f/PhantomPuppet-Icon.png/revision/latest?cb=20220127220753",
+link:"https://www.google.com/search?q=wiki+do+phantom+puppet+fnaf+2&sca_esv=24e9182f14ad4a8e&sxsrf=APpeQnqJzV5X5X5X5X5X5X5X5X5X5X5X5X five_nights_at_freddy%27s?utm_source=chatgpt.com"
+},
+
+{
+nome:"Phantom Freddy",
+imagem:"https://static.wikia.nocookie.net/freddy-fazbears-pizza/images/0/02/PhantomFreddy-Icon.png/revision/latest?cb=20220127220621",
+link:"https://www.google.com/search?q=wiki+do+phantom+freddy+fnaf+2&sca_esv=24e9182f14ad4a8e&sxsrf=APpeQnqJzV5X5X5X5X5X5X5X5X5X5X5X5X five_nights_at_freddy%27s?utm_source=chatgpt.com"
+},
+
+{
+nome:"Phantom Chica",
+imagem:"https://static.wikia.nocookie.net/freddy-fazbears-pizza/images/0/0c/PhantomChica-Icon.png/revision/latest?cb=20220127220453",
+link:"https://www.google.com/search?q=wiki+do+phantom+chica+fnaf+2&sca_esv=24e9182f14ad4a8e&sxsrf=APpeQnqJzV5X5X5X5X5X5X5X5X5X5X5X5X five_nights_at_freddy%27s?utm_source=chatgpt.com"
+},
+
+{
+nome:"Phantom Mangle",
+imagem:"https://static.wikia.nocookie.net/freddy-fazbears-pizza/images/1/1b/PhantomMangle-Icon.png/revision/latest?cb=20220127220712",
+link:"https://www.google.com/search?q=wiki+do+phantom+mangle+fnaf+2&sca_esv=24e9182f14ad4a8e&sxsrf=APpeQnqJzV5X5X5X5X5X5X5X5X5X5X5X5X five_nights_at_freddy%27s?utm_source=chatgpt.com"
+}
+
+
+]
+},
+
+fnaf4:{
+titulo:"FNAF 4",
+
+historia:"Uma criança enfrenta versões pesadelo dos animatrônicos durante noites aterrorizantes.",
+
+
+jogabilidade:"Ouvir sons, usar lanterna e verificar portas, cama e armário.",
+
+
+
+
+personagens:[
+{
+nome:"Nightmare Freddy",
+imagem:"https://static.wikia.nocookie.net/freddy-fazbears-pizza/images/5/53/NightmareFreddy-Icon.png/revision/latest?cb=20220128192109",
+link:"https://www.google.com/search?q=wiki+do+nightmare+freddy+fnaf+4&sca_esv=24e9182f14ad4a8e&sxsrf=APpeQnqJzV5X5X5X5X5X5X5X5X5X5X5X5X five_nights_at_freddy%27s?utm_source=chatgpt.com"
+},
+{
+nome:"Nightmare Bonnie",
+imagem:"https://static.wikia.nocookie.net/freddy-fazbears-pizza/images/3/33/NightmareBonnie-Icon.png/revision/latest?cb=20220128192152",
+link:"https://www.google.com/search?q=wiki+do+nightmare+bonnie+fnaf+4&sca_esv=24e9182f14ad4a8e&sxsrf=APpeQnqJzV5X5X5X5X5X5X5X5X5X5X5X5X five_nights_at_freddy%27s?utm_source=chatgpt.com"
+},
+
+{
+    nome:"Nightmare Chica",
+    imagem:"https://static.wikia.nocookie.net/freddy-fazbears-pizza/images/c/c6/NightmareChica-Icon.png/revision/latest?cb=20220128192247",
+    link:"https://www.google.com/search?q=wiki+do+nightmare+chica+fnaf+4&sca_esv=24e9182f14ad4a8e&sxsrf=APpeQnqJzV5X5X5X5X5X5X5X5X5X5X5X5X five_nights_at_freddy%27s?utm_source=chatgpt.com"
+},
+
+{
+    nome:"Nightmare Foxy",
+    imagem:"https://static.wikia.nocookie.net/freddy-fazbears-pizza/images/8/85/NightmareFoxy-Icon.png/revision/latest?cb=20220128192331", 
+link:"https://www.google.com/search?q=wiki+do+nightmare+foxy+fnaf+4&sca_esv=24e9182f14ad4a8e&sxsrf=APpeQnqJzV5X5X5X5X5X5X5X5X5X5X5X5X five_nights_at_freddy%27s?utm_source=chatgpt.com"
+},
+
+{
+    nome:"Nightmare Fredbear",
+    imagem:"https://static.wikia.nocookie.net/freddy-fazbears-pizza/images/1/15/NightmareFredbear-Icon.png/revision/latest?cb=20220128192431",
+    link:"https://www.google.com/search?q=wiki+do+nightmare+fredbear+fnaf+4&sca_esv=24e9182f14ad4a8e&sxsrf=APpeQnqJzV5X5X5X5X5X5X5X5X5X5X5X5X five_nights_at_freddy%27s?utm_source=chatgpt.com"
+},
+
+{
+    nome:"Nightmare",
+    imagem:"https://static.wikia.nocookie.net/freddy-fazbears-pizza/images/8/88/Nightmare-Icon.png/revision/latest?cb=20220128192525",
+    link:"https://www.google.com/search?q=wiki+do+nightmare+fnaf+4&sca_esv=24e9182f14ad4a8e&sxsrf=APpeQnqJzV5X5X5X5X5X5X5X5X5X5X5X5X five_nights_at_freddy%27s?utm_source=chatgpt.com"
+},
+
+{
+    nome:"Nightmarione",
+    imagem:"https://static.wikia.nocookie.net/freddy-fazbears-pizza/images/d/db/Nightmarionne-Icon.png/revision/latest?cb=20220128193524",
+    link:"https://www.google.com/search?q=wiki+do+nightmarione+fnaf+4&sca_esv=24e9182f14ad4a8e&sxsrf=APpeQnqJzV5X5X5X5X5X5X5X5X5X5X5X5X five_nights_at_freddy%27s?utm_source=chatgpt.com"
+},
+
+{
+    nome:"Nightmare Balloon",
+    imagem:"https://static.wikia.nocookie.net/freddy-fazbears-pizza/images/4/40/NightmareBB-Icon.png/revision/latest?cb=20220128192715",
+    link:"https://www.google.com/search?q=wiki+do+nightmare+balloon+fnaf+4&sca_esv=24e9182f14ad4a8e&sxsrf=APpeQnqJzV5X5X5X5X5X5X5X5X5X5X5X5X five_nights_at_freddy%27s?utm_source=chatgpt.com"
+},
+
+{
+    nome:"Nightmare Mangle",
+    imagem:"https://static.wikia.nocookie.net/freddy-fazbears-pizza/images/0/0a/NightmareMangle-Icon.png/revision/latest?cb=20220128193426",
+    link:"https://www.google.com/search?q=wiki+do+nightmare+mangle+fnaf+4&sca_esv=24e9182f14ad4a8e&sxsrf=APpeQnqJzV5X5X5X5X5X5X5X5X5X5X5X5X five_nights_at_freddy%27s?utm_source=chatgpt.com"
+},
+
+{
+    nome:"Plushtrap",
+    imagem:"https://static.wikia.nocookie.net/freddy-fazbears-pizza/images/b/b2/Plushtrap-Icon.png/revision/latest?cb=20220128192617",
+    link:"https://www.google.com/search?q=wiki+do+plushtrap+fnaf+4&sca_esv=24e9182f14ad4a8e&sxsrf=APpeQnqJzV5X5X5X5X5X5X5X5X5X5X5X5X five_nights_at_freddy%27s?utm_source=chatgpt.com"
+},
+
+{
+    nome:"Nightmare Jack-O-Bonnie",
+    imagem:"https://static.wikia.nocookie.net/ultra-custom-night/images/9/9e/Jack-O-BonnieHeroIcon.png/revision/latest/scale-to-width/360?cb=20220823121251",
+    link:"https://www.google.com/search?q=wiki+do+nightmare+jack-o-bonnie+fnaf+4&sca_esv=24e9182f14ad4a8e&sxsrf=APpeQnqJzV5X5X5X5X5X5X5X5X5X5X5X5X five_nights_at_freddy%27s?utm_source=chatgpt.com"
+},
+
+{
+    nome:"Nightmare Jack-O-Chica",
+    imagem:"https://static.wikia.nocookie.net/freddy-fazbears-pizza/images/3/30/JackOChica-Icon.png/revision/latest?cb=20220128193341",
+    link:"https://www.google.com/search?q=wiki+do+nightmare+jack-o-chica+fnaf+4&sca_esv=24e9182f14ad4a8e&sxsrf=APpeQnqJzV5X5X5X5X5X5X5X5X5X5X5X5X five_nights_at_freddy%27s?utm_source=chatgpt.com"
+},
+
+{
+    nome:"Nightmare Cupcake",
+    imagem:"https://static.wikia.nocookie.net/ultra-custom-night/images/6/6d/Nightmare_cupcake_ultra_custom_night_in_desk.png/revision/latest?cb=20210222133358",
+    link:"https://www.google.com/search?q=wiki+do+nightmare+cupcake+fnaf+4&sca_esv=24e9182f14ad4a8e&sxsrf=APpeQnqJzV5X5X5X5X5X5X5X5X5X5X5X5X five_nights_at_freddy%27s?utm_source=chatgpt.com"
+},
+
+{
+    nome:"Pumpkin Patch",
+    imagem:"https://static.wikia.nocookie.net/ultra-custom-night/images/f/f7/Pumpkin_Squad_New.png/revision/latest?cb=20221008191633",
+    link:"https://www.google.com/search?q=wiki+do+pumpkin+patch+fnaf+4&sca_esv=24e9182f14ad4a8e&sxsrf=APpeQnqJzV5X5X5X5X5X5X5X5X5X5X5X5X five_nights_at_freddy%27s?utm_source=chatgpt.com"
+}
+]
+}
+
+};
+
+
+
+function mostrar(id){
+
+const jogo = jogos[id];
+
+document.getElementById("info").innerHTML = `
+
+<h2>${jogo.titulo}</h2>
+
+<h3>📖 História</h3>
+<p>${jogo.historia}</p>
+
+<h3>🎭 Personagens (clique para abrir a wiki do personagem desejado)</h3>
+
+<div class="personagens">
+
+${jogo.personagens.map(p => `
+<a href="${p.link}" target="_blank" class="personagem">
+<img src="${p.imagem}" alt="${p.nome}">
+<p>${p.nome}</p>
+</a>
+`).join("")}
+
+</div>
+
+<h3>🎮 Jogabilidade</h3>
+<p>${jogo.jogabilidade}</p>
+
+`;
+
+}
+
+</script>
+
+</body>
+</html>

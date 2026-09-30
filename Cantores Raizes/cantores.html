@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Nossos Cantores Sertanejos</title>
+
+    <style>
+        * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f7efe3;
+    color: #3d2414;
+}
+
+
+/* CABEÇALHO */
+
+header {
+    background: #3b1f0d;
+    color: white;
+
+    padding: 22px 6%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    font-family: Georgia, serif;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 25px;
+}
+
+
+/* TÍTULO */
+
+main {
+    width: 90%;
+    max-width: 1200px;
+    margin: 50px auto;
+}
+
+.titulo {
+    text-align: center;
+
+    font-family: Georgia, serif;
+    font-size: 50px;
+
+    margin-bottom: 15px;
+}
+
+.subtitulo {
+    text-align: center;
+    font-size: 19px;
+
+    margin-bottom: 45px;
+}
+
+
+/* CARDS */
+
+.cantores {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 25px;
+}
+
+
+.card {
+    background: #fffaf2;
+
+    border-radius: 15px;
+
+    overflow: hidden;
+
+    text-decoration: none;
+
+    color: #3d2414;
+
+    box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+
+    transition: 0.3s;
+}
+
+
+/* ANIMAÇÃO */
+
+.card:hover {
+    transform: translateY(-10px) scale(1.03);
+
+    box-shadow: 0 15px 30px rgba(0,0,0,0.25);
+}
+
+
+/* IMAGENS */
+
+.card img {
+    width: 100%;
+
+    height: 220px;
+
+    object-fit: cover;
+
+    display: block;
+
+    transition: 0.4s;
+}
+
+
+.card:hover img {
+    transform: scale(1.08);
+}
+
+
+/* NOME */
+
+.card h3 {
+    text-align: center;
+
+    font-family: Georgia, serif;
+
+    font-size: 21px;
+
+    padding: 18px 10px 5px;
+}
+
+
+/* VER MAIS */
+
+.card p {
+    text-align: center;
+
+    padding: 10px 10px 20px;
+
+    font-weight: bold;
+}
+
+
+/* RODAPÉ */
+
+footer {
+    background: #3b1f0d;
+
+    color: white;
+
+    text-align: center;
+
+    padding: 30px;
+
+    margin-top: 60px;
+
+    font-family: Georgia, serif;
+
+    font-size: 18px;
+}
+
+
+/* CELULAR */
+
+@media (max-width: 800px) {
+
+    header {
+        flex-direction: column;
+
+        gap: 15px;
+    }
+
+    nav a {
+        margin: 0 8px;
+    }
+
+    .cantores {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .titulo {
+        font-size: 38px;
+    }
+
+}
+
+
+@media (max-width: 550px) {
+
+    .cantores {
+        grid-template-columns: 1fr;
+    }
+
+    .titulo {
+        font-size: 32px;
+    }
+
+}
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>🎸 SERTANEJO</h1>
+
+        <nav>
+            <a href="paginainicial.html">Início</a>
+        </nav>
+    </header>
+
+
+    <main>
+
+        <h2 class="titulo">Cantores mais Famosos do Sertanjo</h2>
+
+        <p class="subtitulo">
+            Clique em uma banda para conhecer sua história
+            e as músicas mais escutadas!
+        </p>
+
+
+        <section class="cantores">
+
+
+            <!-- TRIO PARADA DURA -->
+
+            <a href="trio-parada-dura.html" class="card">
+
+                <img src="https://i.ytimg.com/vi/Ba6YXbSfhYA/sddefault.jpg" alt="Trio Parada Dura">
+
+                <h3>Trio Parada Dura</h3>
+
+                <p> Ver mais sobre eles</p>
+
+            </a>
+
+
+            <!-- LEANDRO & LEONARDO -->
+
+            <a href="leandro-&-leonardo.html" class="card">
+
+                <img src="https://i.ytimg.com/vi/sMcmG2eLBXU/sddefault.jpg" alt="Leandro e Leonardo">
+
+                <h3>Leandro & Leonardo</h3>
+
+                <p> Ver mais sobre eles</p>
+
+            </a>
+
+
+            <!-- GILBERTO & GILMAR -->
+
+            <a href="gilberto-&-gilmar.html" class="card">
+
+                <img src="https://i.ytimg.com/vi/4cK2n9RSEdU/maxresdefault.jpg" alt="Gilberto e Gilmar">
+
+                <h3>Gilberto & Gilmar</h3>
+
+                <p> Ver mais sobre eles</p>
+
+            </a>
+
+
+            <!-- JOÃO MINEIRO & MARCIANO -->
+
+            <a href="joao-mineiro-&-marciano.html" class="card">
+
+                <img src="https://i.ytimg.com/vi/0WpfvN2JYdU/sddefault.jpg" alt="João Mineiro e Marciano">
+
+                <h3>João Mineiro & Marciano</h3>
+
+                <p> Ver mais sobre eles</p>
+
+            </a>
+
+
+            <!-- DI PAULLO & PAULINO -->
+
+            <a href="di-paullo-&-paulino.html" class="card">
+
+                <img src="https://i.ytimg.com/vi/CUyskQOapbc/hq720.jpg?sqp=-oaymwE7CK4FEIIDSFryq4qpAy0IARUAAAAAGAElAADIQj0AgKJD8AEB-AH-CYAC0AWKAgwIABABGGUgTSg8MA8=&rs=AOn4CLCGqR5Ofkbxr57A_8-FzaubF4DQNg" alt="Di Paullo e Paulino">
+
+                <h3>Di Paullo & Paulino</h3>
+
+                <p> Ver mais sobre eles</p>
+
+            </a>
+
+
+            <!-- CHITÃOZINHO & XORORÓ -->
+
+            <a href="chitaozinho-&-xororo.html" class="card">
+
+                <img src="https://i.ytimg.com/vi/GjgeEK41TCM/maxresdefault.jpg" alt="Chitãozinho e Xororó">
+
+                <h3>Chitãozinho & Xororó</h3>
+                
+                <p> Ver mais sobre eles</p>
+
+            </a>
+
+
+            <!-- LOURENÇO & LOURIVAL -->
+
+            <a href="lourenco-&-lourival.html" class="card">
+
+                <img src="https://i.ytimg.com/vi/Rfd8jBEhuNk/sddefault.jpg" alt="Lourenço e Lourival">
+
+                <h3>Lourenço & Lourival</h3>
+
+                <p> Ver mais sobre eles</p>
+
+            </a>
+
+
+            <!-- MILIONÁRIO & JOSÉ RICO -->
+
+            <a href="milionario-&-jose-rico.html" class="card">
+
+                <img src="https://i.ytimg.com/vi/EEY4iknNt_8/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLDyx8RKK0NfdO_XDOlo86jpCusXUA" alt="Milionário e José Rico">
+
+                <h3>Milionário & José Rico</h3>
+
+                <p> Ver mais sobre eles</p>
+
+            </a>
+
+
+            <!-- TIÃO CARREIRO & PARDINHO -->
+
+            <a href="tiao-carreiro-&-pardinho.html" class="card">
+
+                <img src="https://i.ytimg.com/vi/YGSUazkgOiE/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLB5GIlCXHkKKbYV6xQDzeUblJS03A" alt="Tião Carreiro e Pardinho">
+
+                <h3>Tião Carreiro & Pardinho</h3>
+
+                <p> Ver mais sobre eles</p>
+
+            </a>
+
+             <!-- TEODORO & SAMPAIO -->
+
+            <a href="teodoro-&-sampaio.html" class="card">
+
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRY7AU9FPxwHVPkGQh6Znn5RitYrjspy0XzyTlpqWtKvdEZLgJyE9Jhe5c&s=10" alt="Teodoro e Sampaio">
+
+                <h3>Teodoro & Sampaio</h3>
+
+                <p> Ver mais sobre eles</p>
+
+            </a>
+
+                        <!-- GINO & GENO  -->
+
+            <a href="gino-&-geno.html" class="card">
+
+                <img src="https://i.ytimg.com/vi/h1zZPIuIMmY/sddefault.jpg" alt="Gino e Geno">
+
+                <h3>Gino & Geno
+
+                </h3>
+
+                <p> Ver mais sobre eles</p>
+
+            </a>
+
+             <!-- TÔNICO & TINÓCO  -->
+
+            <a href="tonico-tinoco.html" class="card">
+
+                <img src="https://i.ytimg.com/vi/A51hpEfY3HQ/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLAxvE9NCfGRpg8BIo1K1mg3pBcwsA" alt="Tonico e Tinoco">
+
+                <h3>Tonico & Tinoco
+
+                </h3>
+
+                <p> Ver mais sobre eles</p>
+
+            </a>
+            
+
+        </section>
+
+    </main>
+
+
+    <footer>
+
+        <p>
+            Para o mundo ser completo, não precisava faltar nada. Bastava que todo som fosse sertanejo. 
+            E toda poeira fosse cavalgada.
+        </p>
+
+    </footer>
+
+</body>
+
+</html>
