@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DI PAULLO & PAULINO</title>
+</head>
+<style>
+  
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f7efe3;
+    color: #3b2415;
+}
+
+
+
+
+header {
+    background: #3b1f0d;
+    color: white;
+    padding: 22px 7%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header::before {
+    content: "🎸 SERTANEJO";
+    font-family: Georgia, serif;
+    font-size: 27px;
+    font-weight: bold;
+}
+
+nav {
+    display: flex;
+    gap: 20px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: #d9b17b;
+}
+
+
+
+
+body > h1 {
+    text-align: center;
+
+    font-family: Georgia, serif;
+    font-size: 48px;
+
+    color: #3b1f0d;
+
+    margin-top: 70px;
+    margin-bottom: 20px;
+}
+
+body > h1::after {
+    content: "";
+    display: block;
+
+    width: 100px;
+    height: 3px;
+
+    background: #8b5a35;
+
+    margin: 20px auto;
+}
+
+
+
+body > p {
+    width: 85%;
+    max-width: 1000px;
+
+    margin: 30px auto;
+
+    background: #fffaf2;
+
+    padding: 35px;
+
+    border-radius: 18px;
+
+    border: 1px solid #ead8c0;
+
+    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+
+    font-size: 18px;
+    line-height: 1.8;
+
+    text-align: justify;
+}
+
+
+
+
+body > h2 {
+    text-align: center;
+
+    font-family: Georgia, serif;
+
+    font-size: 35px;
+
+    color: #3b1f0d;
+
+    margin-top: 70px;
+    margin-bottom: 35px;
+}
+
+
+
+body > ul {
+    width: 90%;
+    max-width: 1000px;
+
+    margin: 0 auto 80px;
+
+    padding: 0;
+
+    list-style: none;
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 20px;
+}
+
+body > ul li {
+    background: #fffaf2;
+
+    border: 1px solid #ead8c0;
+
+    border-radius: 15px;
+
+    padding: 25px;
+
+    text-align: center;
+
+    box-shadow: 0 5px 15px rgba(0,0,0,0.12);
+
+    transition: 0.3s;
+}
+
+body > ul li:hover {
+    transform: translateY(-8px);
+
+    box-shadow: 0 12px 25px rgba(0,0,0,0.20);
+}
+
+body > ul li a {
+    color: #6b3d1e;
+
+    font-family: Georgia, serif;
+
+    font-size: 19px;
+
+    font-weight: bold;
+
+    text-decoration: none;
+}
+
+body > ul li a:hover {
+    color: #a36b3c;
+}
+
+
+
+@media (max-width: 700px) {
+
+    body > h1 {
+        font-size: 35px;
+    }
+
+    body > ul {
+        grid-template-columns: 1fr;
+    }
+
+    body > p {
+        width: 90%;
+        padding: 25px;
+    }
+
+}
+</style>
+<body>
+
+    <header>
+        <h1>DI PAULLO & PAULINO</h1>
+
+        <nav>
+            <a href="index.html">Início</a>
+            <a href="cantores.html">Cantores</a>
+        </nav>
+    </header>
+
+    <h1>HISTÓRIA DE DI PAULLO & PAULINO</h1>
+
+
+    <p>
+  Di Paullo & Paulino foi formada pelos irmãos Elias e Geraldo em 1973. 
+  Reconhecidos pela forte identidade com o sertanejo de raiz, acumulam mais de 50 anos de carreira, 
+  tendo iniciado a trajetória em Minas Gerais e se consolidado nacionalmente a partir de Goiás.
+  Di Paullo (Elias Antônio de Paula) nascido no dia 20 de janeiro de 1957, na cidade de Minas Gerais chamada 
+  Martinho Campos. E seu irmão Paulino (Geraldo Aparecido de Paula) nascido no dia 3 de abril de 1961, na mesma cidade que seu irmão.
+  E os 2 estão vivos até hoje fazendo shows, tendo Di Paullo com 69 anos e Paulino com 65 anos.
+</p>
+
+
+
+<h2>AS MÚSICAS MAIS ESCUTADAS DO DI PAULLO & PAULINO</h2>
+
+<ul>
+    <li><a href="https://www.youtube.com/watch?v=IxEis7TVDc0">Tô por Aí</a></li>
+    <li><a href="https://www.youtube.com/watch?v=KNczLCPcxS8">Amor de Primavera</a></li>
+    <li><a href="https://www.youtube.com/watch?v=xMW8aBwRIbM">Nada Mudou</a></li>
+    <li><a href="https://www.youtube.com/watch?v=0QsJaHIwxLw">O Que É Que Eu Sou Sem Você (Nada, Nada, Nada)</a></li>
+    <li><a href="https://www.youtube.com/watch?v=f_yGbhoyU38">Ponto Final</a></li>
+    <li><a href="https://www.youtube.com/watch?v=RTiPoBsdJKU">Tudo Passa</a></li>
+    <li><a href="https://www.youtube.com/watch?v=Ue_L5TIPCVE">Estrelinha (com participação da Marília Mendonça)</a></li>
+    <li><a href="https://www.youtube.com/watch?v=d-15ZhbRvXQ">Nos Céus dos Braços Seus</a></li>
+    <li><a href="https://www.youtube.com/watch?v=IxEis7TVDc0">Tô Indo Embora</a></li>
+</ul>
+
+
+
+
+    
+</body>
+</html>
