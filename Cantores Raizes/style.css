@@ -1,0 +1,82 @@
+
+.barra-pesquisa {
+    width: 100%;
+    max-width: 500px;
+    margin: 25px auto;
+}
+
+.barra-pesquisa input {
+    width: 100%;
+    padding: 14px 18px;
+    border: 2px solid #8b5a35;
+    border-radius: 25px;
+    background: #fffaf3;
+    color: #3d2414;
+    font-size: 16px;
+    outline: none;
+    box-sizing: border-box;
+    transition: 0.3s;
+}
+
+.barra-pesquisa input:focus {
+    border-color: #c28a50;
+    box-shadow: 0 0 10px #c28a5040;
+}
+
+
+/* Barra de pesquisa com lupa */
+.pesquisa-musica-raizes {
+    display: block;
+    width: 90%;
+    max-width: 500px;
+    margin: 25px auto;
+    padding: 14px 18px;
+    box-sizing: border-box;
+    border: 2px solid #8b5a35;
+    border-radius: 25px;
+    background: #fffaf3;
+    color: #3d2414;
+    font-size: 16px;
+}
+
+/* Botão do modo escuro */
+#botaoModo {
+    padding: 10px 15px;
+    margin: 10px;
+    border: 2px solid #d9b17b;
+    border-radius: 20px;
+    background: #3b1f0d;
+    color: white;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+/* Cores do modo escuro */
+body.escuro {
+    background: #17110d;
+    color: #ffffff;
+}
+
+body.escuro header,
+body.escuro footer {
+    background: #24160f;
+    color: #ffffff;
+}
+
+body.escuro .card {
+    background: #2b211b;
+    color: #ffffff;
+}
+
+body.escuro .card h3,
+body.escuro h1,
+body.escuro h2,
+body.escuro p {
+    color: inherit;
+}
+
+body.escuro #botaoModo {
+    background: #f1e2ce;
+    color: #3b1f0d;
+}
+
